@@ -28,9 +28,11 @@ class CarManager:
             cars.forward(STARTING_MOVE_DISTANCE + self.level * MOVE_INCREMENT)
 
     def level_up(self):
+        """Changes the level to increase the speed of the cars"""
         self.level += 1
 
     def collision(self, player):
+        """Checks for collision between the cars and the players"""
         for cars in self.all_cars:
             if cars.distance(player) < 20:
                 return False
